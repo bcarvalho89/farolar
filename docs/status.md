@@ -8,6 +8,7 @@
 - Local embedding models measured on the VPS for memory and latency.
 - Brand notes for FaroLar written in [design.md](design.md), and the README updated.
 - Task 1: pnpm workspace with the 5 packages, TypeScript, Vitest, and Biome. `pnpm lint`, `pnpm typecheck`, and `pnpm test` pass. `apps/web` is an empty package until task 14 runs the Next setup.
+- Task 2: `compose.yaml` with Postgres 18 and pgvector, and Redis 8 with 128 MB, `volatile-lru`, and AOF every second. Both have CPU and memory limits. Checked locally: `vector` and `pg_trgm` install, and a Redis key survives a restart.
 
 ## Waiting on
 
@@ -15,7 +16,7 @@
 
 ## Next step
 
-Tasks 2 (local Docker Compose), 3 (first CI), and 4 (Zod schemas, Bruno) can start, since they depend only on task 1.
+Tasks 3 (first CI) and 4 (Zod schemas, Bruno) can start, since they depend only on task 1.
 
 ## First stage: Nov 9 to 15
 

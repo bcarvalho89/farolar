@@ -10,6 +10,16 @@ The demo will use fictional data only, clearly labeled as such. See the [spec](d
 
 Next.js on Vercel, a Fastify API on a shared VPS, Postgres with pgvector, Redis, and Gemini on the free tier. All of it runs at zero cost.
 
+## Local development
+
+Requires Node 26 (see `.nvmrc`; with [fnm](https://github.com/Schniz/fnm), run `fnm use`), pnpm, and Docker.
+
+```sh
+pnpm install
+docker compose up -d --wait   # Postgres with pgvector, and Redis, on 127.0.0.1
+pnpm lint && pnpm typecheck && pnpm test
+```
+
 ## Docs
 
 - [Spec](docs/spec.md): scope, architecture, and what is out of scope.

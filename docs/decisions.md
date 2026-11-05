@@ -46,3 +46,9 @@ Each entry records what was decided and why.
 - **Node 26, pinned in `.nvmrc`.** It is the current LTS, and it runs TypeScript files directly by stripping types, so the API, generator, and evals need no build step or runner such as `tsx`. The TypeScript settings (`.ts` import extensions, `erasableSyntaxOnly`, `noEmit`) only allow code that Node can strip. Distro builds of Node may ship without TypeScript support, so use an official build (fnm, nvm, or the official Docker image).
 - **Workspace packages export their `.ts` source.** With no build step, `@farolar/shared` can be imported as-is by the API, generator, and evals.
 - **Biome skips Markdown.** Its formatter pads Markdown tables, which turns every doc edit into a large diff.
+
+## 2026-11-05: local services
+
+- **Postgres 18 with the `pgvector/pgvector` image, and Redis 8.** They are the current major versions, and both images ship ARM builds for the Oracle VPS.
+- **Extensions are created by migrations, not by container init scripts.** Init scripts only run on an empty volume, and CI and the VPS run migrations anyway, so `CREATE EXTENSION` lives in the first migration.
+- **Redis memory limit of 256 MB for a 128 MB `maxmemory`.** An AOF rewrite forks the process, which needs room above the data set.
