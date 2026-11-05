@@ -1,0 +1,7 @@
+{
+  "name": "farolar",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  }
+}
