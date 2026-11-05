@@ -40,3 +40,9 @@ Each entry records what was decided and why.
 - **Sale listings only.** Rentals would double the price and history cases without strengthening any differentiator.
 - **Biome for lint and formatting.** One fast tool with little configuration, instead of ESLint plus Prettier.
 - **Keyset pagination, with a capped candidate set for ranked searches.** `OFFSET` gets slower the deeper it goes, while ranking by RRF computes positions per search, so it pages within a fixed top set.
+
+## 2026-11-05: monorepo structure
+
+- **Node 26, pinned in `.nvmrc`.** It is the current LTS, and it runs TypeScript files directly by stripping types, so the API, generator, and evals need no build step or runner such as `tsx`. The TypeScript settings (`.ts` import extensions, `erasableSyntaxOnly`, `noEmit`) only allow code that Node can strip. Distro builds of Node may ship without TypeScript support, so use an official build (fnm, nvm, or the official Docker image).
+- **Workspace packages export their `.ts` source.** With no build step, `@farolar/shared` can be imported as-is by the API, generator, and evals.
+- **Biome skips Markdown.** Its formatter pads Markdown tables, which turns every doc edit into a large diff.
