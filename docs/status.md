@@ -43,4 +43,4 @@ Tasks 3 (first CI) and 4 (Zod schemas, Bruno) can start, since they depend only 
 
 All of Bruno's tasks are on the critical path, and deduplication (10) is the largest. If the week gets tight, the virtualized list (15) moves to the start of week 2 without blocking the AI work.
 
-Before the search UI: define the visual identity in [design.md](design.md), time-boxed to half a day (palette, typography, and map style), and approve the result labels and tagline.
+The visual identity is defined in [design.md](design.md): palette, typography, icons, map style, result labels, and tagline. The logo mark is still open.

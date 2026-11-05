@@ -52,3 +52,12 @@ Each entry records what was decided and why.
 - **Postgres 18 with the `pgvector/pgvector` image, and Redis 8.** They are the current major versions, and both images ship ARM builds for the Oracle VPS.
 - **Extensions are created by migrations, not by container init scripts.** Init scripts only run on an empty volume, and CI and the VPS run migrations anyway, so `CREATE EXTENSION` lives in the first migration.
 - **Redis memory limit of 256 MB for a 128 MB `maxmemory`.** An AOF rewrite forks the process, which needs room above the data set.
+
+## 2026-11-05: visual identity
+
+- **"Paper" direction, with one accent reserved for evidence.** Bruno's concept is a lighthouse that lights up one point, and his anti-goal is information that looks dressed up. A calm, warm, light page with navy ink reads as a checked document, while the dark direction felt cold for a home and the teal one looked like any banking app.
+- **The AI interpretation never uses the evidence accent.** It is a guess about the request, so lighting it like "confere" would present it as verified. The URL also does not record who set each filter, so the "IA" marker is a transient line instead of a per-chip state.
+- **No red or green for prices.** Traffic-light colors make any price above the lowest look like a warning, which drifts toward "good deal" advice the spec forbids.
+- **Source Serif 4 for headings and Source Sans 3 for everything else.** It fits the checked-document tone, and both have tabular figures by default. Measured on the latin woff2 files, it costs about 50 KB, close to a single family. The trade-off is a small x-height, so text has a 12px minimum.
+- **Lucide for icons.** Its plain strokes match the tone, it is ISC licensed, and only imported icons reach the bundle. The fonts lack ✓, ≠, and ↔, so label marks must be SVG anyway.
+- **Light water on the map.** The list is the main way to browse, so the map should stay quiet. The dark sea looked more like a lighthouse but outweighed the list.
