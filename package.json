@@ -1,7 +1,21 @@
 {
-  "name": "farolar",
-  "private": true,
-  "engines": {
-    "node": ">=22"
-  }
+	"name": "farolar",
+	"private": true,
+	"type": "module",
+	"packageManager": "pnpm@12.16.1",
+	"engines": {
+		"node": ">=26"
+	},
+	"scripts": {
+		"lint": "biome check .",
+		"format": "biome check --write .",
+		"typecheck": "pnpm -r typecheck",
+		"test": "vitest run --passWithNoTests"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.6.5",
+		"@types/node": "^26.6.6",
+		"typescript": "^7.0.2",
+		"vitest": "^5.1.0"
+	}
 }

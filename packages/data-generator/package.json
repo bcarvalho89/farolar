@@ -1,0 +1,9 @@
+{
+	"name": "@farolar/data-generator",
+	"private": true,
+	"type": "module",
+	"exports": "./src/index.ts",
+	"scripts": {
+		"typecheck": "tsc"
+	}
+}
