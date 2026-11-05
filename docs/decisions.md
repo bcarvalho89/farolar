@@ -9,7 +9,7 @@ Each entry records what was decided and why.
 - **Results are grouped properties, computed in batch.** This keeps the search query simple and the list easy to page.
 - **The generator degrades data on purpose.** With identical addresses, deduplication would be a `GROUP BY` and its published metrics would mean nothing.
 - **Three deduplication outcomes, including "possibly the same property".** A wrong group shows a false price difference, which is worse than a missed duplicate.
-- **Stricter rules than nova-casa for identical units and land plots.** Its exact price signal would join identical condominium units, and its land rule accepts matching area plus similar text. Both count as false positives here.
+- **Stricter rules for identical units and land plots.** An exact price signal would join identical condominium units, and a land rule that accepts matching area plus similar text would merge different plots. Both count as false positives here.
 - **`pg_trgm` for deduplication text similarity.** The main differentiator must work without AI.
 - **Embeddings run online for queries as well as in batch.** A user's preferences must become a vector at search time with the same model as the descriptions, which contradicted the earlier "only in batch" risk note.
 - **Embedding pass criteria set before measuring.** This stops the result from being fitted afterward.
