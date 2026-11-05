@@ -107,7 +107,7 @@ Deduplication, price differences, and history do not depend on AI, so the main d
 - A land plot is confirmed only with the same area and evidence that identifies the lot, such as block and lot or an address number.
 - The algorithm never reads the ground truth.
 
-The generator must produce the cases that test these rules: chains of lookalikes; identical lots from one agency; shared condominium boilerplate; copied and original agency text; differing attributes such as suites for the same house; land area only in the text; identical units; and vague land plots with the same area. Lessons come from `monitor/src/dedup.py` in [nova-casa](https://github.com/bcarvalho89/nova-casa/tree/main/monitor), but no thresholds or real data are copied from it.
+The generator must produce the cases that test these rules: chains of lookalikes; identical lots from one agency; shared condominium boilerplate; copied and original agency text; differing attributes such as suites for the same house; land area only in the text; identical units; and vague land plots with the same area. Lessons come from an earlier private prototype, but no thresholds, code, or real data are copied from it.
 
 **Safeguards**
 - Per-IP limit and a daily cap below the provider's quota: 400 calls per day and 12 per minute, counting retries and refinements, resetting at midnight Pacific like the provider's quota. These values live in configuration.
